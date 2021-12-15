@@ -31,7 +31,7 @@ class DAO {
 const dao = new DAO('mongodb://localhost:27017/','test', 'user');
 const obj = {
   name: '邓楚恬',
-  age: 18
+  age: 99
 }
 dao.insert(obj).then(res => {
   console.log(res);
