@@ -47,7 +47,7 @@ function App(){
     ).catch(
       err => {
         console.log(err)
-        message.error(err.response.data.message, 2);
+        message.error('获取失败', 2);
       }
     );
   }
@@ -63,16 +63,22 @@ function App(){
 }
 
 axios.interceptors.request.use(function (config) {
+  console.log(config,'config');
+  if(config.url === '/api/register' || config.url === '/api/login'){
+    return config;
+  }
+
   let token = window.localStorage.getItem("token")
-  console.log(token,123);
-  if (token) {
+  if (token !== null) {
     //将token放到请求头发送给服务器,将tokenkey放在请求头中
     config.headers.accessToken = token;
     return config;
   } else {
+    console.log(token,333);
     message.error('登陆过期，请先登陆！')
   }
 }, function (error) {
   return Promise.reject(error);
 });
+
 export default App;
