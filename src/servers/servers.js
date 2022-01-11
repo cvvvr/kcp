@@ -1,8 +1,8 @@
 import axios from "axios";
-
+// eslint-disable-next-line
 const api = (url, params, method) => {
   switch ( method ) {
-    case 'post':
+    case 'post':{
       return new Promise((resolve, reject) => {
         axios.post(url, {
           params: params
@@ -12,8 +12,8 @@ const api = (url, params, method) => {
             reject(err)
           }
         )
-      })
-    case 'get':
+      })}
+    case 'get':{
       return new Promise((resolve, reject) => {
         axios.get(url, {
           params: params
@@ -23,7 +23,9 @@ const api = (url, params, method) => {
             reject(err)
           }
         )
-      })
+      })}
+    default:
+      console.log('default');
   }
 }
 
