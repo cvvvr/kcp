@@ -1,7 +1,47 @@
 import './css/style.css';
 import {useState} from "react";
+import {message} from "antd";
+import {registerApi, loginApi} from "../../servers/servers";
 export default function Login(){
+  const [name,setName] = useState()
+  const [email,setEmail] = useState()
+  const [password,setPassword] = useState()
   const [islogin,setIslogin] = useState(true)
+
+  const register = () => {
+    const user = {
+      username: name,
+      useremail: email,
+      password: password
+    }
+    registerApi(user).then(
+      res => {
+        message.success(res.data.message, 2);
+      }
+    ).catch(
+      err => {
+        message.error(err.response.data.message, 2);
+      }
+    );
+  }
+  const login = () => {
+    const user = {
+      username: name,
+      useremail: email,
+      password: password
+    }
+    loginApi(user).then(
+      res => {
+        console.log(res.data);
+        window.localStorage.setItem('token', res.data.token);
+        message.success(res.data.message, 2);
+      }
+    ).catch(
+      err => {
+        message.error(err.response.data.message, 2);
+      }
+    );
+  }
 
   const changeStatus = ()=>{
     const newIslogin = !islogin;
@@ -18,10 +58,10 @@ export default function Login(){
               <img className="form__icon" src="img/3.svg" alt=""/>
             </div>
             <span className="form__span">or use your email account</span>
-            <input className="form__input" type="text" placeholder="Email"/>
-            <input className="form__input" type="password" placeholder="Password"/>
+            <input className="form__input" type="text" placeholder="Email" onBlur={(event) => {setEmail(event.target.value)}}/>
+            <input className="form__input" type="password" placeholder="Password" onBlur={(event) => {setPassword(event.target.value)}}/>
             <p className="form__link">忘记密码?</p>
-            <button className="form__button button submit" type="button">登录</button>
+            <button className="form__button button submit" type="button" onClick={login}>登录</button>
           </form>
         </div>
       )}
@@ -34,10 +74,10 @@ export default function Login(){
               <img className="form__icon" src="img/2.svg" alt=""/>
             </div>
             <span className="form__span">or use email for registration</span>
-            <input className="form__input" type="text" placeholder="Name"/>
-            <input className="form__input" type="text" placeholder="Email"/>
-            <input className="form__input" type="password" placeholder="Password"/>
-            <button className="form__button button submit" type="button">注册</button>
+            <input className="form__input" type="text" placeholder="Name" onBlur={(event) => {setName(event.target.value)}}/>
+            <input className="form__input" type="text" placeholder="Email" onBlur={(event) => {setEmail(event.target.value)}}/>
+            <input className="form__input" type="password" placeholder="Password" onBlur={(event) => {setPassword(event.target.value)}}/>
+            <button className="form__button button submit" type="button" onClick={register}>注册</button>
           </form>
         </div>
       )}

@@ -2,56 +2,10 @@ import './App.css';
 // import Phone from "./components/Phone";
 import Login from "./components/Login/Login";
 import {message} from 'antd';
-// import {registerApi, loginApi, getUserApi} from "./servers/servers";
 import axios from "axios";
 
 function App(){
-  // const register = () => {
-  //   const user = {
-  //     username: 'xiaocheng',
-  //     password: '123'
-  //   }
-  //   registerApi(user).then(
-  //     res => {
-  //       message.success(res.data.message, 2);
-  //     }
-  //   ).catch(
-  //     err => {
-  //       message.error(err.response.data.message, 2);
-  //     }
-  //   );
-  // }
-  // const login = () => {
-  //   const user = {
-  //     username: 'xiaocheng',
-  //     password: '123'
-  //   }
-  //   loginApi(user).then(
-  //     res => {
-  //       console.log(res.data);
-  //       window.localStorage.setItem('token', res.data.token);
-  //       message.success(res.data.message, 2);
-  //     }
-  //   ).catch(
-  //     err => {
-  //       message.error(err.response.data.message, 2);
-  //     }
-  //   );
-  // }
-  //
-  // const getUser = () => {
-  //   console.log(window.localStorage.getItem("token"));
-  //   getUserApi().then(
-  //     res => {
-  //       console.log(res.data);
-  //     }
-  //   ).catch(
-  //     err => {
-  //       console.log(err)
-  //       message.error('获取失败', 2);
-  //     }
-  //   );
-  // }
+
 
   return (
     <div className="App">
@@ -65,7 +19,6 @@ function App(){
 }
 
 axios.interceptors.request.use(function (config) {
-  console.log(config,'config');
   if(config.url === '/api/register' || config.url === '/api/login'){
     return config;
   }
