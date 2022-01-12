@@ -41,7 +41,7 @@ export default function Login(){
         window.localStorage.setItem('token', res.data.token);
         message.success(res.data.message, 2);
         dispatch({ type: "updateUser" , user : nowUser });
-        window.location.href='http://localhost:3000/hello2022/index.html';
+        window.location.href='http://139.186.128.205:3000/hello2022/index.html';
         // browser.push('/phone');
       }
     ).catch(
