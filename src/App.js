@@ -1,19 +1,26 @@
 import './App.css';
-// import Phone from "./components/Phone";
-import Login from "./components/Login/Login";
 import {message} from 'antd';
 import axios from "axios";
+import Login from "./components/Login/Login";
+import Main from "./components/Main";
+import UserInfo from "./components/userInfo/UserInfo";
+import Game from "./components/game/Game";
+import {Router, Route, hashHistory ,IndexRoute} from "react-router";
+import React from "react";
 
 function App(){
 
-
   return (
     <div className="App">
-      <Login></Login>
-      {/*<Button type='primary' onClick={ register }>register</Button>*/}
-      {/*<Button type='primary' onClick={ login }>login</Button>*/}
-      {/*<Button type='primary' onClick={ getUser }>getUser</Button>*/}
-      {/*<Phone></Phone>*/ }
+      <Router history={hashHistory}>
+          <Route path="/" component={Login}/>
+          <Route path="/login" component={Login}/>
+        <Route path="/main" component={Main}>
+          <IndexRoute component={UserInfo}/>
+          <Route path="/userInfo" component={UserInfo}/>
+          <Route path="/game" component={Game}/>
+        </Route>
+      </Router>
     </div>
   );
 }

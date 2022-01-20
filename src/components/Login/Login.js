@@ -3,10 +3,9 @@ import {useState} from "react";
 import {message} from "antd";
 import {registerApi, loginApi} from "../../servers/servers";
 import {useMappedState , useDispatch} from "redux-react-hook";
-// import { useHistory } from 'react-router-dom'
+import {hashHistory} from "react-router";
 
 export default function Login(){
-  // const browser = useHistory();
   const [name,setName] = useState()
   const [email,setEmail] = useState()
   const [password,setPassword] = useState()
@@ -41,8 +40,7 @@ export default function Login(){
         window.localStorage.setItem('token', res.data.token);
         message.success(res.data.message, 2);
         dispatch({ type: "updateUser" , user : nowUser });
-        window.location.href='http://139.186.128.205:3000/hello2022/index.html';
-        // browser.push('/phone');
+        hashHistory.push('/main')
       }
     ).catch(
       err => {

@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import { StoreContext } from "redux-react-hook";
 import { store } from "./store";
 import './index.css';
-import Router from './router/Router';
+import App from "./App";
 
 ReactDOM.render(
   <StoreContext.Provider value={store}>
-    <Router/>
+    <App/>
   </StoreContext.Provider>,
   document.getElementById('root')
 );
