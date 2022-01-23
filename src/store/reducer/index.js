@@ -1,7 +1,11 @@
+
+
+
 const initialState = {
   user: {
     username: "",
-    useremail: ""
+    useremail: "",
+    rankImage: "",
   }
 }
 

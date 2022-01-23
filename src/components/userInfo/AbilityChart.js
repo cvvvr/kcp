@@ -4,9 +4,6 @@ import {useEffect} from "react";
 
 export default function AbilityChart() {
   const option = {
-    grid: {
-      top: 100
-    },
     title: {
       text: '答题战力图'
     },

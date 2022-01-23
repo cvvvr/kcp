@@ -1,9 +1,6 @@
 .main_body{
-  width: 100vw;
-  height: 100vh;
-  background-image: url("../static/bggg.jpg");
-  background-size: 100% 100%;
-  background-position: center center;
+  width: 1680px;
+  height: 920px;
   overflow: auto;
   display: flex;
   justify-content: center;
@@ -14,9 +11,11 @@
 
 /**/
 .main_main {
-  width: 60vw;
-  height: 70vh;
-  box-shadow: 10px 10px 10px #afc5e8;
+  width: 1080px;
+  height: 720px;
+  min-width: 1080px;
+  min-height: 720px;
+  box-shadow: 10px 10px 10px #afc5e8 , -10px -10px 10px #afc5e8;
   border-radius: 12px;
   overflow: hidden;
 }
@@ -25,18 +24,18 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 15vw;
-  height: 70vh;
-  margin-right: 1vw;
+  width: 280px;
+  height: 720px;
+  margin-right: 20px;
   border-radius: 12px;
 }
 
 .optionItem {
-  width: 15vw;
-  height: 10vh;
+  width: 280px;
+  height: 90px;
   border-radius: 12px;
   box-shadow: 10px 10px 10px #afc5e8;
-  font-size: 3vh;
+  font-size: 30px;
   font-weight: bold;
   opacity: 0.6;
   color: #460606;
@@ -44,8 +43,8 @@
 
 .userInfo {
   display: flex;
-  width: 15vw;
-  height: 5vw;
+  width: 280px;
+  height: 90px;
   border-radius: 12px;
   box-shadow: 10px 10px 10px #afc5e8;
   color: #460606;
@@ -60,8 +59,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 5vw;
-  height: 5vw;
+  width: 90px;
+  height: 90px;
   border-radius: 12px;
   background-color: darkkhaki;
 }
@@ -75,16 +74,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 10vw;
+  min-width: 180px;
   border-radius: 12px;
   opacity: 0.8;
 }
 .name{
-  font-size: 1vw;
+  font-size: 20px;
   font-weight: bold;
-  margin-bottom: 1vh;
+  margin-bottom: 2px;
 }
 .rank {
-  font-size: 1vh;
+  font-size: 12px;
   font-weight: bold;
 }

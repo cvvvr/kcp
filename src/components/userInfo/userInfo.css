@@ -17,8 +17,6 @@
 }
 
 .ability {
-  width: 50%;
-  height: 100%;
   opacity: 0.8;
 }
 .rankInfo {
@@ -37,8 +35,8 @@
   border-radius: 12px;
 }
 .rankIcon {
-  width: 15vw;
-  height: 15vw;
+  width: 260px;
+  height: 260px;
 }
 .rankText {
   font-size: 2rem;
@@ -93,6 +91,7 @@
   text-align: left;
 }
 .chartItem {
+  margin-top: 10px;
   width: 100%;
   height: 100% !important;
 }

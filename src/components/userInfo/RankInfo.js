@@ -1,9 +1,12 @@
 import './userInfo.css'
 import {useEffect , useState} from "react";
 import {Image, Progress} from "antd";
-import wangzheIcon from '../../static/rank/wangzhe.png'
+import RankImageHelper from "../../RankImageHelper";
 export default function RankInfo(){
   const [grade,setGrade] = useState(99);
+  const [rank] = useState('zongshi');
+
+
   useEffect(() => {
     setGrade(88);
   },[])
@@ -11,8 +14,8 @@ export default function RankInfo(){
   return (
     <div className='rankInfo'>
       <div className='rankRank'>
-        <Image className='rankIcon' preview={false} src={ wangzheIcon }/>
-        <span className='rankText'>最强王者</span>
+        <Image className='rankIcon' preview={false} src={ RankImageHelper.get(rank).image }/>
+        <span className='rankText'>{ RankImageHelper.get(rank).name }</span>
       </div>
       <div className='rankGrade'>
         <Progress
