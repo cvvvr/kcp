@@ -27,5 +27,5 @@ export default function Option() {
       <Button className='optionItem' > 去答题 </Button>
     </div>
   )
-}
+}   
 
